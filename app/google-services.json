@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "63453255553",
+    "project_id": "pollution-3dfc7",
+    "storage_bucket": "pollution-3dfc7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63453255553:android:eae139dc858d477f843a80",
+        "android_client_info": {
+          "package_name": "com.c1ctech.airquality"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63453255553-7btm93m7s7dqvnpsgao04e7tples4q2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI-Uc_Z7rHbLC2k3xdGX2xlZmZcHy0xBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63453255553-7btm93m7s7dqvnpsgao04e7tples4q2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63453255553:android:0998dfa140be07b3843a80",
+        "android_client_info": {
+          "package_name": "com.c1ctech.airqualityapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63453255553-7btm93m7s7dqvnpsgao04e7tples4q2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI-Uc_Z7rHbLC2k3xdGX2xlZmZcHy0xBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63453255553-7btm93m7s7dqvnpsgao04e7tples4q2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -42,13 +42,11 @@ class RegisterActivity : AppCompatActivity() {
 
         }
 
-        var name = activityRegisterBinding.edtName.text
-        var email = activityRegisterBinding.edtEmail.text
-        var password = activityRegisterBinding.edtPassword.text
-
-
-
         activityRegisterBinding.btnCreateAccount.setOnClickListener {
+            var name = activityRegisterBinding.edtName.text
+            var email = activityRegisterBinding.edtEmail.text
+            var password = activityRegisterBinding.edtPassword.text
+
             if ((email!!.isEmpty() && password!!.isEmpty()) || email!!.isEmpty() || password!!.isEmpty() || name!!.isEmpty()) {
                 Toast.makeText(
                     this, "Please enter name,email and password.",

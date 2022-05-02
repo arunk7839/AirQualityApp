@@ -23,11 +23,12 @@ class LoginActivity : AppCompatActivity() {
         activityLoginBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(activityLoginBinding.root)
 
-        var email = activityLoginBinding.edtEmail.text
-        var password = activityLoginBinding.edtPassword.text
+
 
 
         activityLoginBinding.btnLogin.setOnClickListener {
+            var email = activityLoginBinding.edtEmail.text
+            var password = activityLoginBinding.edtPassword.text
             if ((email!!.isEmpty() && password!!.isEmpty()) || email!!.isEmpty() || password!!.isEmpty()) {
                 Toast.makeText(
                     this, "Please enter email and password.",

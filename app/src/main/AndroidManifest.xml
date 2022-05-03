@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.c1ctech.airqualityapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,16 +28,16 @@
             android:value="AIzaSyAQ2Y1wFf81awNXaq83BEZXA2APrzyfJLE" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".data.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".data.LoginActivity"
             android:exported="false"
             android:label="@string/login"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".data.RegisterActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

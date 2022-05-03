@@ -1,4 +1,4 @@
-package com.c1ctech.airqualityapp
+package com.c1ctech.airqualityapp.data
 
 import android.content.Intent
 import android.os.Bundle
@@ -22,9 +22,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityLoginBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(activityLoginBinding.root)
-
-
-
 
         activityLoginBinding.btnLogin.setOnClickListener {
             var email = activityLoginBinding.edtEmail.text
@@ -68,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithEmail:failure", task.exception)
                         Toast.makeText(
-                            this, "Please enter correct email and password..",
+                            this, "Authentication failed..",
                             Toast.LENGTH_SHORT
                         ).show()
                         updateUI(null)

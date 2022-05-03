@@ -1,4 +1,4 @@
-package com.c1ctech.airqualityapp
+package com.c1ctech.airqualityapp.data
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.c1ctech.airqualityapp.R
 import com.c1ctech.airqualityapp.databinding.ActivityRegisterBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult

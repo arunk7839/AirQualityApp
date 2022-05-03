@@ -1,10 +1,14 @@
-package com.c1ctech.airqualityapp
+package com.c1ctech.airqualityapp.data
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.c1ctech.airqualityapp.R
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -13,12 +17,18 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.c1ctech.airqualityapp.databinding.ActivityMapsBinding
+import com.c1ctech.airqualityapp.network.RetrofitService
+import com.c1ctech.airqualityapp.repository.MainRepository
+import com.c1ctech.airqualityapp.viewmodel.MainViewModel
 import com.google.firebase.auth.FirebaseAuth
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
+    lateinit var viewModel: MainViewModel
+    private val retrofitService = RetrofitService.getInstance()
+    private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +40,27 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        //get viewmodel instance using ViewModelProvider.Factory
+        viewModel =
+            ViewModelProvider(this, MyViewModelFactory(MainRepository(retrofitService))).get(
+                MainViewModel::class.java
+            )
+
+        //the observer will only receive events if the owner(activity) is in active state
+        //invoked when movieList data changes
+        viewModel.time.observe(this, Observer {
+            Log.d(TAG, "timeList: $it")
+        })
+
+        //invoked when a network exception occurred
+        viewModel.errorMessage.observe(this, Observer {
+            Log.d(TAG, "errorMessage: $it")
+        })
+
+        //grunnkrets
+        viewModel.getAllData(60f,10f,null)
+        //viewModel.getAllData(60f,10f,"grunnkrets")
     }
 
     /**
